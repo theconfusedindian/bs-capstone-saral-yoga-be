@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node --watch index.js",
+    "db:migrate": "knex migrate: latest",
+    "db:seed": "knex seed:run",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -11,10 +14,22 @@
     "url": "git+https://github.com/theconfusedindian/bs-capstone-saral-yoga-be.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "sri-chandrapatla",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/theconfusedindian/bs-capstone-saral-yoga-be/issues"
   },
-  "homepage": "https://github.com/theconfusedindian/bs-capstone-saral-yoga-be#readme"
+  "homepage": "https://github.com/theconfusedindian/bs-capstone-saral-yoga-be#readme",
+  "dependencies": {
+    "axios": "^1.2.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "knex": "^2.3.0",
+    "mysql": "^2.18.1",
+    "node": "^19.2.0",
+    "uuid": "^9.0.0"
+  }
 }
