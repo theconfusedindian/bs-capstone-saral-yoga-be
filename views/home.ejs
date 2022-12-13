@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <style>
+      body {
+        font-family: "Helvetica", "Arial", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Check out what clients are saying!</h1>
+
+    <h2>Routes:</h2>
+    <section>
+      <h3>GET /</h3>
+      <p>This page</p>
+    </section>
+
+    <section>
+      <h3>GET /reviews</h3>
+      <p>Get a list of reviews</p>
+    </section>
+    <section>
+      <h3>GET /reviews/:id</h3>
+      <p>Get details about a specific review</p>
+    </section>
+    <section>
+      <h3>POST /reviews</h3>
+      <p>Submit a new review</p>
+      <p>
+        The request needs to include a review object in the body. Here's an
+        example object:
+      </p>
+      <pre>
+                <code>{
+                    name: "Azul",
+                    comment: "Artfully embellish the walls of your palace by drafting the most beautiful tiles."
+                }</code>
+            </pre>
+    </section>
+    <section>
+      <h3>DELETE /reviews/:id</h3>
+      <p>Delete a single review with the given id</p>
+    </section>
+    <hr />
+  </body>
+</html>
