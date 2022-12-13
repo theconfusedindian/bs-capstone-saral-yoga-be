@@ -1,6 +1,5 @@
 const knex = require("knex")(require("../knexfile"));
 const { v4: uuid } = require("uuid");
-const fs = require("fs");
 
 exports.getReviews = (_req, res) => {
   knex("reviews")

@@ -3,10 +3,6 @@
  * @returns { Promise<void> }
  */
 
-// const bookingsData = require("../seed_data/bookings");
-// const usersData = require("../seed_data/users");
-// const reviewsData = require("../seed_data/reviews");
-
 exports.up = function (knex) {
   return knex.schema
     .createTable("users", (table) => {

@@ -7,10 +7,11 @@ router.use(express.json());
 router
   .route("/bookings")
   .get(bookingsController.getBookingsData)
+  .put(bookingsController.putBooking)
   .post(bookingsController.newBooking);
 
 router
-  .route("/:id")
+  .route("/bookings:id")
   .get(bookingsController.getBooking)
   .put(bookingsController.putBooking)
   .delete(bookingsController.deleteBooking);
