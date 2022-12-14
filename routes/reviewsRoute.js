@@ -3,12 +3,12 @@ const router = express.Router();
 const reviewsController = require("../controllers/reviewsController");
 
 router
-  .route("/reviews")
+  .route("/")
   .get(reviewsController.getReviews)
   .post(reviewsController.newReview);
 
 router
-  .route("/review:id")
+  .route("/:id")
   .get(reviewsController.getSingleReviewData)
   .put(reviewsController.putReview)
   .delete(reviewsController.deleteReview);

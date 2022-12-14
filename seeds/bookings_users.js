@@ -13,13 +13,19 @@ exports.seed = function (knex) {
     })
     .then(() => {
       return knex("bookings").insert(bookingsData);
-    });
-};
-
-exports.seed = function (knex) {
-  return knex("reviews")
-    .del()
+    })
+    .then(() => {
+      return knex("reviews").del();
+    })
     .then(() => {
       return knex("reviews").insert(reviewsData);
     });
 };
+
+// exports.seed = function (knex) {
+//   return knex("reviews")
+//     .del()
+//     .then(() => {
+//       return knex("reviews").insert(reviewsData);
+//     });
+// };

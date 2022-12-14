@@ -15,10 +15,10 @@ app.use(cors());
 app.use(express.json());
 
 // endpoints
-app.use("/", function (req, res, next) {
-  console.log("GET request called");
-  res.end();
-});
+// app.use("/", function (req, res, next) {
+//   console.log("GET request called");
+//   res.end();
+// });
 app.use("/reviews", reviewsRoute);
 app.use("/bookings", bookingsRoute);
 app.use("/users", usersRoute);

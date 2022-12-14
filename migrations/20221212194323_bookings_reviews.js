@@ -7,19 +7,20 @@ exports.up = function (knex) {
   return knex.schema
     .createTable("users", (table) => {
       table.uuid("id").primary();
-      table.string("email").notNullable;
-      table.string("password").notNullable;
+      table.string("name").notNullable();
+      table.string("email").notNullable();
+      table.string("password").notNullable();
     })
     .createTable("bookings", (table) => {
       table.uuid("id").primary();
-      table.date("date").notNullable;
-      table.string("time_slot").notNullable;
+      table.date("date").notNullable();
+      table.string("time_slot").notNullable();
     })
     .createTable("reviews", (table) => {
       table.uuid("id").primary();
-      table.string("name").notNullable;
-      table.string("email").notNullable;
-      table.string("review").notNullable;
+      table.string("name").notNullable();
+      table.string("email").notNullable();
+      table.string("review").notNullable();
     });
 };
 
@@ -28,5 +29,8 @@ exports.up = function (knex) {
  * @returns { Promise<void> }
  */
 exports.down = function (knex) {
-  return knex.schema.dropTable("bookings").dropTable("users");
+  return knex.schema
+    .dropTable("reviews")
+    .dropTable("bookings")
+    .dropTable("users");
 };

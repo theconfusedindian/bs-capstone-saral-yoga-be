@@ -3,8 +3,11 @@ const { v4: uuid } = require("uuid");
 const users = require("../seed_data/users");
 
 exports.getUsers = (_req, res) => {
-  knex("users")
+  knex
+    .select()
+    .from("users")
     .then((data) => {
+      console.log("hello world!");
       res.status(200).json(data);
     })
     .catch((err) => res.status(400).send(`Error retrieving users: ${err}`));
@@ -12,7 +15,9 @@ exports.getUsers = (_req, res) => {
 
 // callback for single user data
 exports.getSingleUserData = (req, res) => {
-  knex("users")
+  knex
+    .select()
+    .from("users")
     .where("id", req.params.id)
     .then((data) => res.status(200).json(data))
     .catch((err) => res.status(400).send(`Error retrieving the user : ${err}`));
