@@ -11,21 +11,21 @@ module.exports = [
     name: "Gary Wong",
     email: "gary.wong@gmail.com",
     review:
-      "Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!",
+      "Every time I see him shred I feel so motivated to get off my couch and hop on my board. Hes so talented! I wish I can ride like him one day so I can really enjoy myself!",
   },
   {
     id: "66b7d3c7-4023-47f1-a02c-520c9ca187a6",
     name: "Theodore Duncan",
     email: "theodore.duncan@gmail.com",
     review:
-      "How can someone be so good!!! You can tell he lives for this and loves to do it every day. Every time I see him I feel instantly happy! He’s definitely my favorite ever!",
+      "How can someone be so good!!! You can tell he lives for this and loves to do it every day. Every time I see him I feel instantly happy! Hes definitely my favorite ever!",
   },
   {
     id: "ade82e25-6c87-4403-ba35-47bdff93a51c",
     name: "Mattie Casarez",
     email: "mattie.casarez@gmail.com",
     review:
-      "This is exactly the kind of advice I’ve been looking for! One minute you’re packing your bags, the next you’re dancing around in the streets without a care in the world.",
+      "This is exactly the kind of advice Ive been looking for! One minute youre packing your bags, the next youre dancing around in the streets without a care in the world.",
   },
   {
     id: "bf704c76-cba9-462e-ac0a-166315df756c",

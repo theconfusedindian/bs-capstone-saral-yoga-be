@@ -5,8 +5,6 @@ const users = require("../seed_data/users");
 const reviews = require("../seed_data/reviews");
 
 exports.getBookingsData = (_req, res) => {
-  //   res.send(`Hello!`);
-
   knex("bookings")
     .join("bookings", "bookings.id")
     .select("bookings.id", "bookings.date", "bookings.time_slot")
@@ -16,8 +14,17 @@ exports.getBookingsData = (_req, res) => {
     .catch((err) => res.status(400).send(`Error retrieving bookings: ${err}`));
 };
 
-// callback to update a booking
+// callback to get a booking
 exports.getBooking = (req, res) => {
+  knex("bookings")
+    .where("id", req.params.id)
+    .then((data) => {
+      res.status(200).send(`the booking ${req.params.id} is here`);
+    });
+};
+
+// callback to update a booking
+exports.putBooking = (req, res) => {
   knex("bookings")
     .where("id", req.params.id)
     .update(req.body)

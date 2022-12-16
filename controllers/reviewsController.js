@@ -1,6 +1,5 @@
 const knex = require("knex")(require("../knexfile"));
 const { v4: uuid } = require("uuid");
-const fs = require("fs");
 
 exports.getReviews = (_req, res) => {
   knex("reviews")
@@ -34,10 +33,12 @@ exports.putReview = (req, res) => {
 };
 
 exports.newReview = (req, res) => {
-  if (!req.body.client_name || !req.body.client_email || !req.body.review) {
+  if (!req.body.name || !req.body.email || !req.body.review) {
     res.status(400).send("Please complete all details to post your review");
   } else {
-    knex("reviews")
+    knex
+      .select()
+      .from("reviews")
       .insert({ id: uuid(), ...req.body })
       .then(() => {
         res.status(201).send("Thanks for posting your review");
