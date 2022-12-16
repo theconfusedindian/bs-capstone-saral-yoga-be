@@ -5,8 +5,6 @@ const users = require("../seed_data/users");
 const reviews = require("../seed_data/reviews");
 
 exports.getBookingsData = (_req, res) => {
-  //   res.send(`Hello!`);
-
   knex("bookings")
     .join("bookings", "bookings.id")
     .select("bookings.id", "bookings.date", "bookings.time_slot")

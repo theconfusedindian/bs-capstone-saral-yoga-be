@@ -4,6 +4,8 @@ const usersController = require("../controllers/usersController");
 
 router.route("/").get(usersController.getUsers).post(usersController.newUser);
 
+router.route("/login").post(usersController.postUser);
+
 router
   .route("/:id")
   .get(usersController.getSingleUserData)

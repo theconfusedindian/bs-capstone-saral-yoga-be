@@ -5,13 +5,13 @@ const bookingsController = require("../controllers/bookingsController");
 router.use(express.json());
 
 router
-  .route("/bookings")
+  .route("/")
   .get(bookingsController.getBookingsData)
   .put(bookingsController.putBooking)
   .post(bookingsController.newBooking);
 
 router
-  .route("/bookings:id")
+  .route("/:id")
   .get(bookingsController.getBooking)
   .put(bookingsController.putBooking)
   .delete(bookingsController.deleteBooking);

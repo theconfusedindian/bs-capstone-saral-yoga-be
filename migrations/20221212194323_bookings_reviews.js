@@ -8,14 +8,22 @@ exports.up = function (knex) {
     .createTable("users", (table) => {
       table.uuid("id").primary();
       table.string("name").notNullable();
+      table.string("username").notNullable();
       table.string("email").notNullable();
       table.string("password").notNullable();
     })
     .createTable("bookings", (table) => {
       table.uuid("id").primary();
+      table
+        .uuid("user_id")
+        .references("id")
+        .inTable("users")
+        .onUpdate("CASCADE")
+        .onDelete("CASCADE");
       table.date("date").notNullable();
       table.string("time_slot").notNullable();
     })
+
     .createTable("reviews", (table) => {
       table.uuid("id").primary();
       table.string("name").notNullable();

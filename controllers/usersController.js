@@ -1,5 +1,6 @@
 const knex = require("knex")(require("../knexfile"));
 const { v4: uuid } = require("uuid");
+const { values } = require("../seed_data/bookings");
 const users = require("../seed_data/users");
 
 exports.getUsers = (_req, res) => {
@@ -43,8 +44,34 @@ exports.deleteUser = (req, res) => {
     });
 };
 
+// callback to post a user
+exports.postUser = (req, res) => {
+  knex("users")
+    .where({
+      username: req.body.username,
+      password: req.body.password,
+    })
+    .then((data) => {
+      if (
+        data[0].password === req.body.password &&
+        data[0].username === req.body.username
+      ) {
+        console.log(data);
+        res.status(200).send("this information is valid");
+      } else {
+        res.status(400).send("this information is invalid");
+        console.log(data);
+      }
+    });
+};
+
 exports.newUser = (req, res) => {
-  if (!req.body.name || !req.body.email || !req.body.password) {
+  if (
+    !req.body.name ||
+    !req.body.email ||
+    !req.body.username ||
+    !req.body.password
+  ) {
     res.send("Please complete all details");
   } else {
     knex("users")
