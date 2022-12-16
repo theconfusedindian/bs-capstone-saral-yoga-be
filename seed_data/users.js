@@ -3,6 +3,7 @@ module.exports = [
     id: "35bba08b-1b51-4153-ba7e-6da76b5ec1b9",
     name: "Micheal Lyons",
     username: "mlyons",
+
     email: "micheal.lyons@gmail.com",
     password: "y12345!Mike",
   },
@@ -26,8 +27,7 @@ module.exports = [
     username: "mcasarez",
     email: "mattie.casarez@gmail.com",
     password: "y12345!Mat",
-    email: "mattie.casarez@gmail.com",
-    password: "y12345!Matt",
+
   },
   {
     id: "bf704c76-cba9-462e-ac0a-166315df756c",
