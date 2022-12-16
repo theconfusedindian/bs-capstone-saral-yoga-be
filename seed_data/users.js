@@ -26,6 +26,8 @@ module.exports = [
     username: "mcasarez",
     email: "mattie.casarez@gmail.com",
     password: "y12345!Mat",
+    email: "mattie.casarez@gmail.com",
+    password: "y12345!Matt",
   },
   {
     id: "bf704c76-cba9-462e-ac0a-166315df756c",
